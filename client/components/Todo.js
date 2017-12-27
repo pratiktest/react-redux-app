@@ -1,14 +1,21 @@
-import React from 'react'
+//React is imported below  for render and return functions. These are defined in React
 
-const Todo = ({ onClick, completed, text }) => (
-  <li
-    onClick={onClick}
-    style={ {
-      textDecoration: completed ? 'line-through' : 'none'
-    }}
-  >
-    {text}
-  </li>
-)
+import React, {Component} from 'react'
 
-export default Todo
+
+export default class Todo extends Component{
+
+  constructor(props){
+    super(props)
+  }
+
+  render() {
+
+    return(
+        <li onClick={this.props.onClick} style={{textDecoration: this.props.completed ? 'line-through': 'none'}}>
+            {this.props.text}
+        </li>
+    );
+  }
+
+}
